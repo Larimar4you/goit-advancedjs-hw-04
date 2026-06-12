@@ -14,7 +14,7 @@ import {
 let query = '';
 let page = 1;
 let totalHits = 0;
-const perPage = 40;
+const perPage = 15;
 
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
@@ -26,7 +26,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-// слухач для форми
 form.addEventListener('submit', handleFormSubmit);
 
 loadMoreBtn.addEventListener('click', loadMoreImages);
@@ -44,7 +43,7 @@ function handleFormSubmit(event) {
 function resetSearch() {
   page = 1;
   totalHits = 0;
-  gallery.innerHTML = ''; // очищуем галерею
+  gallery.innerHTML = '';
   loadMoreBtn.style.display = 'none';
 }
 
@@ -70,7 +69,6 @@ async function searchImages() {
   }
 }
 
-//обробка рез пошуку
 function handleSearchResults(images, total) {
   if (page === 1) {
     totalHits = total;
