@@ -1,5 +1,10 @@
-import SimpleLightbox from 'simplelightbox';
+import SimpleLightboxModule from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const SimpleLightbox =
+  SimpleLightboxModule.default ||
+  SimpleLightboxModule.SimpleLightbox ||
+  SimpleLightboxModule;
 
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
@@ -23,10 +28,10 @@ export function createGallery(images) {
           />
         </a>
         <div class="gallery-info">
-          <p><b>Likes</b>${image.likes}</p>
-          <p><b>Views</b>${image.views}</p>
-          <p><b>Comments</b>${image.comments}</p>
-          <p><b>Downloads</b>${image.downloads}</p>
+          <p><b>Likes</b> ${image.likes}</p>
+          <p><b>Views</b> ${image.views}</p>
+          <p><b>Comments</b> ${image.comments}</p>
+          <p><b>Downloads</b> ${image.downloads}</p>
         </div>
       </li>
     `
@@ -42,17 +47,17 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.remove('is-hidden');
+  loader.classList.remove('hidden');
 }
 
 export function hideLoader() {
-  loader.classList.add('is-hidden');
+  loader.classList.add('hidden');
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.remove('is-hidden');
+  loadMoreBtn.classList.remove('hidden');
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.add('is-hidden');
+  loadMoreBtn.classList.add('hidden');
 }
