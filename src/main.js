@@ -92,8 +92,6 @@ async function searchImages() {
 
     showLoadMoreButton();
   } catch (error) {
-    console.log(error);
-
     iziToast.error({
       message: 'Failed to load images. Please try again later.',
       position: 'topRight',
